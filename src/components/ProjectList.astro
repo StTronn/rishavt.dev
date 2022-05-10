@@ -1,0 +1,44 @@
+---
+const projects = [
+  {
+    name: "BhaiLang",
+    description:
+      "A dynamically typed toy programming language, based on an inside joke, written in Typescript.",
+    url: "https://bhailang.js.org/",
+  },
+  {
+    name: "Proximo",
+    description:
+      "A video conferencing web application using WebRTC with signalling and authentication servers written in Go. Users can create rooms with custom and unique links.",
+    url: "https://proximo.pw",
+  },
+  {
+    name: "WhatsApp Stat",
+    description:
+      "A tool for parsing and visualising your WhatsApp chats. The chat is processed on the client side and not sent to any server.",
+    url: "https://ristri.github.io/whatsappstat/",
+  },
+];
+---
+
+{projects.map((project) => (
+  <ul>
+    <li>
+      <a href={project.url}>
+        <h3>{project.name}</h3>
+      </a>
+      <p>{project.description}</p>
+    </li>
+  </ul>
+))}
+
+<style>
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  li {
+    padding: 1rem 0 1rem 0;
+  }
+</style>
