@@ -3,23 +3,29 @@ import Logo from "./Logo.astro";
 import SocialIcons from "./SocialIcons.astro";
 ---
 
-<header class="layout">
-  <div class="nav-subitem logo-container"><a href="/"><Logo /> </a></div>
-  <article>
-    <a href="/">
-      <h1>Rishabh Tripathi</h1>
-    </a>
-  </article>
-  <div class="nav-subitem social-icons">
-    <SocialIcons />
+<!-- <div class="nav-subitem logo-container"><a href="/"><Logo /> </a></div> -->
+<!-- <article> -->
+<header>
+  <div data-clip="true">
+    <h5><a href="/">Rishav Thakur</a></h5>
+    <h5>Expirements & Thoughts</h5>
   </div>
+  <h5><time data-clip="true">05.11.2022</time></h5>
 </header>
+<!-- </article> -->
+<!-- <div class="nav-subitem social-icons">
+  <SocialIcons />
+</div> -->
 
 <style>
   header {
-    padding-top: 1rem;
+    /* padding-top: 1rem;
     padding-bottom: 1rem;
-    min-height: 5rem;
+    min-height: 5rem; */
+    /* margin-bottom: calc(var(--unit) * 10); */
+    display: grid;
+    grid-template-columns: max-content max-content;
+    justify-content: space-between;
   }
   article {
     display: flex;
@@ -38,16 +44,6 @@ import SocialIcons from "./SocialIcons.astro";
   }
   .header-subitem:hover {
     color: var(--theme-accent);
-  }
-
-  h1 {
-    margin: 0;
-    font-size: 2rem;
-    letter-spacing: 0.1rem;
-    max-width: 100%;
-    display: flex;
-    flex-grow: 1;
-    color: var(--theme-text);
   }
 
   .nav-subitem {
@@ -82,10 +78,6 @@ import SocialIcons from "./SocialIcons.astro";
     .nav-subitem {
       grid-row: 1;
       grid-column: 2;
-    }
-
-    h1 {
-      font-size: 1.5rem;
     }
   }
 

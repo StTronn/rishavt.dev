@@ -17,10 +17,12 @@ const { title, description, publishDate, author, heroImage, permalink, alt } =
   </head>
 
   <body>
+    <!-- <div> -->
     <BlogHeader />
     <BlogPost {title} {author} {heroImage} {publishDate} {alt}>
       <slot />
     </BlogPost>
     <Footer />
+  <!-- </div> -->
   </body>
 </html>

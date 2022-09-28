@@ -5,6 +5,7 @@ import BlogHeader from "../components/BlogHeader.astro";
 import BlogPostPreview from "../components/BlogPostPreview.astro";
 import ProjectList from "../components/ProjectList.astro";
 import Footer from "../components/Footer.astro";
+import Contact from "../components/Contact.astro";
 
 interface MarkdownFrontmatter {
   publishDate: number;
@@ -14,10 +15,10 @@ interface MarkdownFrontmatter {
 // You can write any JavaScript/TypeScript that you'd like here.
 // It will run during the build, but never in the browser.
 // All variables are available to use in the HTML template below.
-const title = "Rishabh Tripathi";
+const title = "Rishav Thakur";
 const description =
-  "Rishabh Tripathi is a software engineer, dreamer, and an adventure seeker.";
-const permalink = "https://example.com/";
+  "A fool who wanders a lot";
+const permalink = "";
 
 // Data Fetching: List all Markdown posts in the repo.
 
@@ -38,9 +39,6 @@ allPosts = allPosts.sort(
 
     <style>
       body {
-        width: 100%;
-        --gutter: 0.5rem;
-        --doc-padding: 2rem;
       }
 
       header {
@@ -53,7 +51,7 @@ allPosts = allPosts.sort(
       }
 
       .content {
-        margin-top: 4rem;
+        margin-top: 1rem;
       }
 
       @media (max-width: 60em) {
@@ -67,12 +65,12 @@ allPosts = allPosts.sort(
       }
 
       .section {
-        padding-bottom: 4rem;
-        margin-bottom: 2rem;
+        padding-bottom: 2rem;
+        /* margin-bottom: 2rem; */
       }
 
       .section > * {
-        margin: 0;
+        /* margin: 0; */
       }
 
       .latest {
@@ -81,7 +79,7 @@ allPosts = allPosts.sort(
       }
 
       .intro {
-        line-height: 2;
+        /* line-height: 2; */
       }
 
       .section-title {
@@ -95,24 +93,22 @@ allPosts = allPosts.sort(
     <div class="layout">
       <main class="content">
         <section class="section">
+          <h5>About Me</h5>
           <p class="intro">
-            I'm a software engineer, dreamer, and an adventure seeker. <br />
-            I love building stuff and working on challenging problems. <br />I
-            hold a B.Tech in computer science and engineering from MANIT,
-            Bhopal. <br />
-            When I'm not coding, I try my best to be a decent badminton player.
+            Learning by doing.<br/> Currently exploring micropayments & blockchain. <br/> Learning guitar as I go. 
           </p>
         </section>
         <section aria-label="Blog post list">
-          <h2 class="section-title">Blogs</h2>
+          <h5 class="section-title">Blogs</h5>
           {allPosts.map((p) => <BlogPostPreview post={p} />)}
         </section>
         <section class="section" aria-label="Project list">
-          <h2 class="section-title">Past Projects</h2>
+          <h5 class="section-title">Projects</h5>
           <ProjectList />
         </section>
       </main>
     </div>
+    <Contact />
     <Footer />
   </body>
 </html>

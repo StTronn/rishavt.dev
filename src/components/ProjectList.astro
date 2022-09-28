@@ -1,22 +1,16 @@
 ---
 const projects = [
   {
-    name: "BhaiLang",
+    name: "Voccapp",
     description:
-      "A dynamically typed toy programming language, based on an inside joke, written in Typescript.",
-    url: "https://bhailang.js.org/",
+      "voccapp helps you learn words with more retention and efficiency. It features spaced repetition which drastically increases the rate of learning. It also features 2 different modes for different stages of learning",
+    url: "https://www.voccapp.com/",
   },
   {
-    name: "Proximo",
+    name: "Toy-Blockchain",
     description:
-      "A video conferencing web application using WebRTC with signalling and authentication servers written in Go. Users can create rooms with custom and unique links.",
-    url: "https://proximo.pw",
-  },
-  {
-    name: "WhatsApp Stat",
-    description:
-      "A tool for parsing and visualising your WhatsApp chats. The chat is processed on the client side and not sent to any server.",
-    url: "https://ristri.github.io/whatsappstat/",
+      "An implementation of bitcoin blokchain in java. Has a input/output model for transaction. Also has (Transaction, Pow, UTXO, MerkleTree, Wallet)",
+    url: "https://github.com/StTronn/jv-blockchain",
   },
 ];
 ---
@@ -25,7 +19,10 @@ const projects = [
   <ul>
     <li>
       <a href={project.url}>
-        <h3>{project.name}</h3>
+        <u>
+          {" "}
+          <h5>{project.name}</h5>
+        </u>
       </a>
       <p>{project.description}</p>
     </li>
@@ -39,6 +36,6 @@ const projects = [
     margin: 0;
   }
   li {
-    padding: 1rem 0 1rem 0;
+    padding: 1rem 0 0 0;
   }
 </style>

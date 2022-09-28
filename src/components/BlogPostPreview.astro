@@ -7,12 +7,16 @@ const { post } = Astro.props;
 ---
 
 <article class="post-preview">
-  <header>
-    <p class="publish-date">{post.publishDate}</p>
-    <a href={post.url}><h3 class="title">{post.title}</h3></a>
-  </header>
+  <div class='post-preview-heading'>
+  <!-- <p class="publish-date">{post.publishDate}</p> -->
+  <a href={post.url}><u><h5 class="title">{post.title}</h5></u></a>
+  <!-- <small class="publish-date">{post.publishDate}</small> -->
+</div>
+  <!-- <small class="publish-date">{post.publishDate}</small> -->
+  <!-- <p class="publish-date">{post.publishDate}</p> -->
   <p>{post.description}</p>
-  <a href={post.url}>Read more</a>
+  <small class="publish-date">{post.publishDate}</small>
+  <!-- <a href={post.url}>Read more</a> -->
 </article>
 
 <style>
@@ -24,6 +28,12 @@ const { post } = Astro.props;
     padding-bottom: 2rem;
     margin-bottom: 2rem;
     border-bottom: 4px solid var(--theme-divider);
+  }
+
+  .post-preview-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
   header {
@@ -39,6 +49,7 @@ const { post } = Astro.props;
   .author,
   .publish-date {
     margin: 0;
+    padding:0;
   }
 
   .publish-date,
@@ -46,7 +57,4 @@ const { post } = Astro.props;
     color: var(--theme-text-lighter);
   }
 
-  .title {
-    font-weight: 700;
-  }
 </style>
