@@ -1,0 +1,41 @@
+---
+const projects = [
+  {
+    name: "Voccapp",
+    description:
+      "voccapp helps you learn words with more retention and efficiency. It features spaced repetition which drastically increases the rate of learning. It also features 2 different modes for different stages of learning",
+    url: "https://www.voccapp.com/",
+  },
+  {
+    name: "Toy-Blockchain",
+    description:
+      "An implementation of bitcoin blokchain in java. Has a input/output model for transaction. Also has (Transaction, Pow, UTXO, MerkleTree, Wallet)",
+    url: "https://github.com/StTronn/jv-blockchain",
+  },
+];
+---
+
+{projects.map((project) => (
+  <ul>
+    <li>
+      <a href={project.url}>
+        <u>
+          {" "}
+          <h5>{project.name}</h5>
+        </u>
+      </a>
+      <p>{project.description}</p>
+    </li>
+  </ul>
+))}
+
+<style>
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  li {
+    padding: 1rem 0 0 0;
+  }
+</style>

@@ -1,0 +1,60 @@
+---
+export interface Props {
+  post: any;
+}
+
+const { post } = Astro.props;
+---
+
+<article class="post-preview">
+  <div class='post-preview-heading'>
+  <!-- <p class="publish-date">{post.publishDate}</p> -->
+  <a href={post.url}><u><h5 class="title">{post.title}</h5></u></a>
+  <!-- <small class="publish-date">{post.publishDate}</small> -->
+</div>
+  <!-- <small class="publish-date">{post.publishDate}</small> -->
+  <!-- <p class="publish-date">{post.publishDate}</p> -->
+  <p>{post.description}</p>
+  <small class="publish-date">{post.publishDate}</small>
+  <!-- <a href={post.url}>Read more</a> -->
+</article>
+
+<style>
+  .content :global(main > * + *) {
+    margin-top: 1rem;
+  }
+
+  .post-preview {
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    border-bottom: 4px solid var(--theme-divider);
+  }
+
+  .post-preview-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    align-items: flex-start;
+    justify-content: center;
+
+    padding-bottom: 1rem;
+  }
+
+  .author,
+  .publish-date {
+    margin: 0;
+    padding:0;
+  }
+
+  .publish-date,
+  .author {
+    color: var(--theme-text-lighter);
+  }
+
+</style>

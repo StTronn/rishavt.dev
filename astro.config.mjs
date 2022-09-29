@@ -1,8 +1,9 @@
 import { defineConfig } from 'astro/config';
-import preact from "@astrojs/preact";
-import vercel from "@astrojs/vercel";
+// import preact from "@astrojs/preact";
+import vercel from '@astrojs/vercel/serverless';
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [preact(), vercel()]
+  output: 'server',
+  adapter: vercel(),
 });
