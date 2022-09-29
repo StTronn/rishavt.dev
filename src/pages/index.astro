@@ -22,10 +22,11 @@ const permalink = "";
 
 // Data Fetching: List all Markdown posts in the repo.
 
-let allPosts = Astro.fetchContent<MarkdownFrontmatter>("./posts/*.md");
+let allPosts = await Astro.glob<MarkdownFrontmatter>("./posts/*.md");
+  console.log(allPosts)
 allPosts = allPosts.sort(
   (a, b) =>
-    new Date(b.publishDate).valueOf() - new Date(a.publishDate).valueOf()
+    new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf()
 );
 
 // Full Astro Component Syntax:
