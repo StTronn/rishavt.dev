@@ -9,8 +9,6 @@ layout: "../../layouts/BlogPost.astro"
 ---
 
 
-# This article is paid
-
 Can an article be monetized on your own site
 
 Apart from ads which are not a very good experience the only way to monetize your digital content is to put it on a subscription-based platform. This has somewhat hindered the decentralization of owning a digital content platform. As people won’t buy a subscription for an individual site. Unless it has a huge set of content the number of people willing to pay for the whole package will be less.                                                                                                                                                                                                                                                                                                                                                                                                         
@@ -72,7 +70,7 @@ that it becomes hard to go to an independent route. But maybe in future there co
 
 
 <div id='unlock-cartl'  class='popup-cartl'>
-<div class='popup-cartl-wrapper px-2'>
+<div class='popup-cartl-wrapper'>
 	 <h1>Intrested?</h1>
 	 <p> To read more just go through the mock payment flow. Don't worry you don't have to actually pay.</p>
 	 <div data-cartl-payment-button='ajfdk' class='popup-cartl-button'>
