@@ -34,7 +34,7 @@ button, input[type="submit"], input[type="reset"] {
 }
 
 .popup {
-    position:absolute;
+    position:fixed;
     z-index:2;
     right: 0;
     left: 0;
