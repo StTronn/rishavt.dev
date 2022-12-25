@@ -121,6 +121,10 @@ body {
   --doc-padding: 2rem;
 }
 
+p img {
+  width:100%;
+}
+
 
 .layout {
   display: grid;
@@ -362,7 +366,7 @@ p {
 
 .popup-cartl-wrapper{
   display:grid;
-  padding-top:32px;
+  padding:32px 12px 0 12px;
   gap:12px;
   margin-left:auto;
   margin-right:auto;

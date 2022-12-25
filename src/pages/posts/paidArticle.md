@@ -72,7 +72,7 @@ that it becomes hard to go to an independent route. But maybe in future there co
 
 
 <div id='unlock-cartl'  class='popup-cartl'>
-<div class='popup-cartl-wrapper'>
+<div class='popup-cartl-wrapper px-2'>
 	 <h1>Intrested?</h1>
 	 <p> To read more just go through the mock payment flow. Don't worry you don't have to actually pay.</p>
 	 <div data-cartl-payment-button='ajfdk' class='popup-cartl-button'>
