@@ -8,8 +8,5 @@ alt: "Blog Image"
 layout: "../../layouts/BlogPost.astro"
 ---
 
-# Merkle Tree
-A Merkle Tree is something to be scared of.
-## h2
-### tertiary topic
-lorem ispum and writing things that matter
+# Merkle Tree 
+TODO
