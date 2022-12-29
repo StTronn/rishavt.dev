@@ -11,19 +11,19 @@ layout: "../../layouts/BlogPost.astro"
 
 Can an article be monetized on your own site
 
-Apart from ads which are not a very good experience the only way to monetize your digital content is to put it on a subscription-based platform. This has somewhat hindered the decentralization of owning a digital content platform. As people won’t buy a subscription for an individual site. Unless it has a huge set of content the number of people willing to pay for the whole package will be less.                                                                                                                                                                                                                                                                                                                                                                                                         
+Apart from ads which are not a very good experience the only way to monetize your digital content is to put it on a subscription-based platform. This has somewhat hindered the decentralization of owning a digital content platform. As people won’t buy a subscription for an individual or a new site.                                                                                                                                                                                                                                                                                                                                                                                                         
 
 **What if you could put your content anywhere and still be able to monetize it?**
 
 # The scaling of subscriptions and the importance of platforms
 
- Subscriptions it is not viable for small and new content creators. Also, there is somewhat of a threshold for subscriptions, people don’t have a huge number of subscriptions. This somewhat creates a lock-in for the users; hence, new players can’t easily capture an audience. This results in a few platforms. The content creators are somewhat forced to register on these platforms. It somewhat results in creating an identity of the platform instead of these creators. But I guess the business works this way content and these creators are short-lived so the only way to become a good business is by becoming a platform for these content creators. 
+ Subscriptions it is not viable for small and new content creators. Also, there is somewhat of a threshold for subscriptions, people don’t have a huge number of subscriptions. This somewhat creates a lock-in for the users; hence, new players can’t easily capture an audience. This results in a few platforms. But I guess the business works this way content and these creators are short-lived so the only way to become a good business is by becoming a platform for these content creators. 
 
 The major reason I guess why these platforms are also there is because it allows creators to focus just on content and handle everything else. But there is somewhat limitation on how you can put content out there. So with a no-code solution, some people do have their own site and store. 
 
 # Pay per use (A better way to pay)
 
-There are cases when you are interested in a particular article only. The user might be willing to pay for a single article but a subscription might be too much for him.  Especially with a new player.
+There are cases when you are interested in a particular article only. The user might be willing to pay for a single article but a subscription might be too much for him.  Especially with a new player. Pay per view/content where you are paying only for the article you are interested in makes much sense here.
 
 No need to sign in and go through multiple redirections,  unlock any digital content with a click of a button. 
 
