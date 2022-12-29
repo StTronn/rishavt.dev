@@ -21,7 +21,7 @@ Apart from ads which are not a very good experience the only way to monetize you
 
 The major reason I guess why these platforms are also there is because it allows creators to focus just on content and handle everything else. But there is somewhat limitation on how you can put content out there. So with a no-code solution, some people do have their own site and store. 
 
-# Pay per use (A better way to pay)
+# Pay per article (A better way to pay)
 
 There are cases when you are interested in a particular article only. The user might be willing to pay for a single article but a subscription might be too much for him.  Especially with a new player. Pay per view/content where you are paying only for the article you are interested in makes much sense here.
 
