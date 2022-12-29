@@ -11,7 +11,7 @@ layout: "../../layouts/BlogPost.astro"
 
 Can an article be monetized on your own site
 
-Apart from ads which are not a very good experience the only way to monetize your digital content is to put it on a subscription-based platform. This has somewhat hindered the decentralization of owning a digital content platform. As people won’t buy a subscription for an individual or a new site.                                                                                                                                                                                                                                                                                                                                                                                                         
+Apart from ads which are not a very good experience the only way to monetize your digital content is to put it on a subscription-based platform. This has somewhat hindered the decentralization of owning a digital content platform. As people won’t buy a subscription for a new or individual site.                                                                                                                                                                                                                                                                                                                                                                                                         
 
 **What if you could put your content anywhere and still be able to monetize it?**
 
@@ -25,11 +25,11 @@ The major reason I guess why these platforms are also there is because it allows
 
 There are cases when you are interested in a particular article only. The user might be willing to pay for a single article but a subscription might be too much for him.  Especially with a new player. Pay per view/content where you are paying only for the article you are interested in makes much sense here.
 
-No need to sign in and go through multiple redirections,  unlock any digital content with a click of a button. 
+What if we have a easy way to pay for any article. No need to sign in and go through multiple redirections,  unlock any digital content with a click of a button. 
 
 ![Screenshot 2022-12-23 at 5.09.35 PM.png](/assets/blog/paid/popup.png)
 
-Users can monthly top-up a wallet if they want to read the paid article. They can simply unlock it with a click and money will be deducted through the wallet. What we want to play at is whichever platform the content is at users can pay for it easily through our digital interoperable wallet. So you don’t lock into a single platform. 
+Users can monthly top-up a wallet if they want to read the paid article, They can simply unlock it with a click and money will be deducted through the wallet. What we want to play at is whichever platform the content is at users can pay for it easily through our digital interoperable wallet. So you don’t lock into a single platform. 
 
 ### But wait people don’t use wallets?
 
