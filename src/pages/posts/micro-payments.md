@@ -3,13 +3,13 @@ title: "Micro Payments: Payment Channel & Lightning Network"
 description: "Understanding Micro Payments and how to implement it"
 publishDate: "Tuesday, Nov 23 2023"
 author: "Rishav Thakur"
-heroImage: "/hero.jpg"
+heroImage: "/assets/blog/introducing-astro.jpg"
 alt: "Blog Image"
 layout: "../../layouts/BlogPost.astro"
 ---
 
 
-# 1 Way Channel 
+# 1 Way Channeli
 The gist of 1 way transaction is that you lock the sender transaction for a given period of time and you share signed transaction sending from that output to the reciver off chain.
 
 You can define this as 3 function 
