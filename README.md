@@ -1,1 +1,1 @@
-# Personal website of Rishabh Tripathi
+# Personal website of Rishav Thakur 
