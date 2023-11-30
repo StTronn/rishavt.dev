@@ -9,18 +9,18 @@ layout: "../../layouts/BlogPost.astro"
 ---
 
 # The Need for micro Payments
-I will dive into this more in some other article but to quickly highlight on this. With mass adoption and digital assets/information/services increasing in value over time there is a need to build monetization into this products. The problem though is that these services and information have a model of pay as you go or requires a small amount of payment. To build this type of payment model we have to reduce the payment cost/time for the user and the merchant. A fricton free low cost micropayment is required for the upcoming digital world we will be living in. Some examples can be newsletter, twitch streams.
+I will dive into this more in some other article but to quickly highlight on this. With mass adoption and digital assets/information/services increasing in value over time there is a need for fast/native monetization into this products. Also these services and information have a model of pay as you go and generally requires a small amount of payment. To build this type of payment model we have to reduce the payment cost/time for the user and the merchant. A fricton free low cost micropayment is required for the upcoming digital world we will be living in. Some examples can be newsletter, twitch streams.
 
 
 
 # Payment Channel
 In blockchain it cost a certain transaction fees to put a transaction on the blockchain. Also it is slow for example in bitcoin it takes 10mins for a new block to come up. Using bitcoin transaction for paying 1$ every 5 minute between you and some streaming,gaming service will cost you more in fees and will take time.
 
-To solve this we can create a payment channel where you lock your funds for some duration by publishing a transaction on blockchain. Now both parties know the amount is locked once locked the sender can give reciver a transaction relasing some amount from the locked transaction to the reciever. 
+To solve this we can create a payment channel where you lock your funds for some duration by publishing a transaction on blockchain. Now both parties know the amount is locked once locked the sender can give reciver a transaction off chain relasing some amount from the locked transaction to the reciever. 
 
 
 # 1 Way Channel
-The gist of 1 way transaction is that you lock the sender transaction for a given period of time and you share signed transaction sending from that output to the reciver off chain.
+The gist of 1 way transaction is that you lock the sender transaction for a given period of time. Then you share signed transaction sending from locked transaction output to the reciver off chain.
 
 You can define this as 3 function 
 
