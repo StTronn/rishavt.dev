@@ -9,7 +9,7 @@ layout: "../../layouts/BlogPost.astro"
 ---
 
 # The Need for micro Payments
-I will dive into this more in some other article but to quickly highlight on this. With mass adoption and digital assets/information/services increasing in value over time there is a need for fast/native monetization into this products. Also these services and information have a model of pay as you go and generally requires a small amount of payment. To build this type of payment model we have to reduce the payment cost/time for the user and the merchant. A fricton free low cost micropayment is required for the upcoming digital world we will be living in. Some examples can be newsletter, twitch streams.
+I will dive into this more in some other article but to quickly highlight on this. With mass adoption and digital assets/information/services increasing in value over time there is a need for fast/native monetization into this products. Also these services and information have a model of pay as you go and generally requires a small amount of payment. To build this type of payment model we have to reduce the payment cost/time for the user and the merchant. Some examples can be newsletter, twitch streams.
 
 
 
@@ -25,13 +25,13 @@ The gist of 1 way transaction is that you lock the sender transaction for a give
 You can define this as 3 function 
 
 ### Lock(amount,sender) 
-Sender locks his/her amount with an refund expiry
+Sender locks his/her amount with an refund expiry if no action taken(100 block)
 
 ### Send(signed_transaction) (off chain)
 sender sends the signed transaction to reciver where amount <=lock_amount. This is sent Off chain
 
 ### Collect(signed_transaction) 
-reciver relays one of the transaction to the blockchain he got from sender off chain and 
+reciver relays one of the transaction to the blockchain he/she got from sender off chain and 
 
 
 ### Cancel()
@@ -40,7 +40,7 @@ Once the lock time expires the sender gets his money back if collect hasn't been
 
 ## Bitcoin Implementation
 
-### Locking and Cancel
+### Locking and Cancel(refund)
 There is a 2 step process to Lock a transaction, the sender create a multi-sig transaction which between reciver and sender,
 Lets call the transaction Id for this transaction TxId_multi
 
@@ -153,9 +153,8 @@ The problem with one way channel is that once a transaction is shared off-chain 
 To do this we create a form of revokable transactions on both parties, we have 2 set of transaction owned by each party, each party can revoke the transaction. Once both of them 
 have revoked the transaction a new transaction can be formed.
 
-So the basic idea is you create a fund transaction in 2-2 multi sig and now you have 2 commitment transaction on each side which spends from the fund output. 
-Each commitment  transaction is created by 
-The revokable transaction is designed with an expiry time where they both get back the money back after the expiry period.
+So the basic idea is you create a fund transaction in 2-2 multi sig and before you push it to blockchain you share 2 commitment transaction off-chain with each other which spends from the fund output. 
+The commitment  transaction is a revokable transaction designed with an expiry time where they both get back the money back after the expiry period.
 
 ## Funding Transaction
 An initial channel Funding Transaction is created whereby one or both channel counterparties fund the inputs of this transaction. Both parties create
@@ -175,7 +174,7 @@ Note the commitment transaction are exchanged off-chain and aggreed to first bef
 
 
 ## Adding Revokability on both parties 
-Once the commitment transaction is shared we want a way to generate a new set of transactions that gives more money to reciever. The sender can create such a transaction off-chain and send to the reciever, the problem here is that the sender can push the original commitment transaction on blockchain cause it still is valid. So to ensure the payment is done reciever must have some proof that the old commitment transaction held by the 
+Once the commitment transaction is shared we want a way to generate a new set of transactions that gives more money to reciever. The sender can create such a transaction off-chain and send to the reciever, the problem here is that the sender can push the commitment transaction(older transaction) on blockchain cause it still is valid. So to ensure the payment is done reciever must have some proof that the old transaction held by the 
 sender is invalid.
 
 
@@ -183,7 +182,26 @@ sender is invalid.
 ![revoke1.png](/assets/blog/micro-payments/revoke1.png)
 ![revoke2.png](/assets/blog/micro-payments/revoke2.png)
 
-The way revokable transaction works is that the output is valid to the the orignator address after 100 blocks confirmation or to the address of holder_public_key+orignator_rev_public. So by default the transaction is going to the orignator but if he/she wants to revoke it they share the private key of orignator_rev_public_key which allows holder to take this money hence revoking the claim of money by orignator cause the holder can claim this before 100 blocks confirmation and move it by creating another transaction. 
+This construction, a Revocable Sequence Maturity Contract (RSMC),
+creates two paths, with very specific contract terms.
+The contract terms are:
+1. All parties pay into a contract with an output enforcing this contract
+2. Both parties may agree to send funds to some contract, with some
+waiting period (1000 confirmations in our example script). This is the
+revocable output balance.
+3. One or both parties may elect to not broadcast (enforce) the payouts
+until some future date; either party may redeem the funds after the
+waiting period at any time.
+4. If neither party has broadcast this transaction (redeemed the funds),
+they may revoke the above payouts if and only if both parties agree to
+do so by placing in a new payout term in a superseding transaction payout. The new transaction payout can be immediately redeemed after
+the contract is disclosed to the world (broadcast on the blockchain).
+5. In the event that the contract is disclosed and the new payout structure
+is not redeemed, the prior revoked payout terms may be redeemed by
+either party (so it is the responsibility of either party to enforce the
+new terms).
+
+The way revokable transaction works is that the output is valid to the orignator address after 100 blocks confirmation or to the address of holder_public_key+orignator_rev_public. So by default the transaction is going to the orignator but if he/she wants to revoke it they share the private key of orignator_rev_public_key which allows holder(reciver) to take this money hence revoking the claim of money by orignator(sender) cause the holder can claim this before 100 blocks confirmation and move it by creating another transaction. 
 
 Now whenever balance is needed to be updated between the 2 parties, the sender creates a new transaction the reciver acknowledges it by sending the corresponding transaction for the new updated balance and also revoking the previous transaction and finally sender revokes the previous transaction.
 
@@ -195,6 +213,7 @@ Now to update the balances both parties can submit claim to the blockchain, Let'
 Our Claim function checks wether the transaction is the newest one or not. If not it disregards it.
 
 ### What happens when there is a dispute
+How do we check if the claimed transaction is latest one if 2 differnet transaction are submited?
 Lets take an example 
 
 Initial State:
@@ -202,7 +221,7 @@ Initial State:
 Alice and Bob each deposit 10 ETH into the payment channel contract. The contract records: Alice's balance = 10 ETH, Bob's balance = 10 ETH.
 First Transaction:
 
-Alice pays Bob 1 ETH. They both sign a new balance record: Alice's balance = 9 ETH, Bob's balance = 11 ETH.
+Alice pays Bob 1 ETH. They both sign a new balance record and share with each other: Alice's balance = 9 ETH, Bob's balance = 11 ETH.
 Second Transaction:
 
 Bob pays Alice 0.5 ETH. New balance record (signed): Alice's balance = 9.5 ETH, Bob's balance = 10.5 ETH.
@@ -215,12 +234,37 @@ I will add the solidity code for this soon.
 
 
 # Hashed Timelock contracts (HTLCs)
-Let's say you want to make the payment to multiple people opening direct payment channels with these multiple people is costly, But there might be an indirect path i.e if you want to pay to carol, also bob and carol have a payment channel between them. You can route your payment to carol through bob. 
+Let's say you want to make the payment to multiple people, opening multiple direct payment channels is costly, But there might be an indirect path i.e if you want to pay to carol, bob and carol have a payment channel between them & you and bob have a payment channel as well. You can route your payment to carol through bob. 
 
 To do this you share the transaction which can be unlocked with a pre-image that only carol knows Bob gets your money if he knows the pre-image secret and bob creates another transaction where carol gets bob's money if she knows preimage's secret
 
 
 ![HTLC.png](/assets/blog/micro-payments/HTLC.png)
+
+An HTLC is also a channel contract with one’s counterparty which is
+enforcible via the blockchain. The counterparties in a channel agree to the
+following terms for a Hashed Timelock Contract:
+1. If Bob can produce to Alice an unknown 20-byte random input data
+R from a known hash H, within three days, then Alice will settle the
+contract by paying Bob 0.1 BTC.
+2. If three days have elapsed, then the above clause is null and void and
+the clearing process is invalidated, both parties must not attempt to
+settle and claim payment after three days.
+30
+3. Either party may (and should) pay out according to the terms of this
+contract in any method of the participants choosing and close out this
+contract early so long as both participants in this contract agree.
+4. Violation of the above terms will incur a maximum penalty of the funds
+locked up in this contract, to be paid to the non-violating counterparty
+as a fidelity bond.
+
+#Further 
+
+## State Channels 
+In Ethereum the simillar concept can be applied to the state as well, maybe I will dive in on this someday https://ethereum.org/en/developers/docs/scaling/state-channels/
+
+## Cross Chain Swaps
+HTLCs can connect two different blockchain, there is no requirnment that the two connected paths on HLTCs have to be on the same blockchain.
 
 
 # Reference 
