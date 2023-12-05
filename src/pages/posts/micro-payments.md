@@ -201,7 +201,7 @@ is not redeemed, the prior revoked payout terms may be redeemed by
 either party (so it is the responsibility of either party to enforce the
 new terms).
 
-The way revokable transaction works is that the output is valid to the orignator address after 100 blocks confirmation or to the address of holder_public_key+orignator_rev_public. So by default the transaction is going to the orignator but if he/she wants to revoke it they share the private key of orignator_rev_public_key which allows holder(reciver) to take this money hence revoking the claim of money by orignator(sender) cause the holder can claim this before 100 blocks confirmation and move it by creating another transaction. 
+The way revokable transaction works is that the output is valid to the orignator address after 100 blocks confirmation or to the address of holder_public_key + orignator_rev_public*. So by default the transaction is going to the orignator but if he/she wants to revoke it they share the private key of orignator_rev_public_key which allows holder(reciver) to take this money hence revoking the claim of money by orignator(sender) cause the holder can claim this before 100 blocks confirmation and move it by creating another transaction. 
 
 Now whenever balance is needed to be updated between the 2 parties, the sender creates a new transaction the reciver acknowledges it by sending the corresponding transaction for the new updated balance and also revoking the previous transaction and finally sender revokes the previous transaction.
 
