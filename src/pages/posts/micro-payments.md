@@ -267,7 +267,7 @@ HTLCs can connect two different blockchain, there is no requirnment that the two
 
 
 # Reference 
-I took reference from the lightning network [paper]( https://lightning.network/lightning-network-paper.pdf)and [lecture](https://youtu.be/Hzv9WuqIzA0?si=OvCB0Uoml8GhDcFX) by one of the authors  
+I took reference from the lightning network [paper]( https://lightning.network/lightning-network-paper.pdf) and [lecture](https://youtu.be/Hzv9WuqIzA0?si=OvCB0Uoml8GhDcFX) by one of the authors  
 
 For Uni Directional [payment channel](https://solidity-by-example.org/app/uni-directional-payment-channel/)
 
