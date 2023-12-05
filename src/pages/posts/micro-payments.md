@@ -261,7 +261,7 @@ as a fidelity bond.
 # Further 
 
 ## State Channels 
-In Ethereum the simillar concept can be applied to the state as well, maybe I will dive in on this someday [State Channels] (https://ethereum.org/en/developers/docs/scaling/state-channels/)
+In Ethereum the simillar concept can be applied to the state as well, maybe I will dive in on this someday [State Channels](https://ethereum.org/en/developers/docs/scaling/state-channels/)
 ## Cross Chain Swaps
 HTLCs can connect two different blockchain, there is no requirnment that the two connected paths on HLTCs have to be on the same blockchain.
 
@@ -269,5 +269,5 @@ HTLCs can connect two different blockchain, there is no requirnment that the two
 # Reference 
 I took reference from the lightning network [paper]( https://lightning.network/lightning-network-paper.pdf)and [lecture](https://youtu.be/Hzv9WuqIzA0?si=OvCB0Uoml8GhDcFX) by one of the authors  
 
-For Uni Directional [payment channel] (https://solidity-by-example.org/app/uni-directional-payment-channel/)
+For Uni Directional [payment channel](https://solidity-by-example.org/app/uni-directional-payment-channel/)
 
