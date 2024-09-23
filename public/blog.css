@@ -1,3 +1,21 @@
+@font-face {
+  font-family: 'Josefin Sans';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 700;
+  src: url(./assets/fonts/josefin-sans-latin-variable-wghtOnly-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}  
+
+@font-face {
+  font-family: 'JetBrainsMono';
+  /* font-style: normal; */
+  /* font-display: swap; */
+  /* font-weight: 100 700; */
+  src: url(./assets/fonts/JetBrainsMono-Regular.woff2) format('woff2');
+  /* unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; */
+}  
+
 :root {
   --unit: 8px;
   --fontSize: 16px;
@@ -13,6 +31,7 @@
 
   /* --font-fallback: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji; */
   --font-body: 'Josefin Sans', var(--font-fallback);
+  --font-temp: 'JetBrainsMono';
   --font-mono: 'IBM Plex Mono', 'Consolas', 'Andale Mono WT', 'Andale Mono', 'Lucida Console', 'Lucida Sans Typewriter', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono',
     'Liberation Mono', 'Nimbus Mono L', Monaco, 'Courier New', Courier, monospace;
 
@@ -46,7 +65,7 @@
   --theme-accent-rgb: var(--color-orange-rgb);
   --theme-accent-opacity: 0.1;
   --theme-divider: var(--color-gray-100);
-  --theme-text: var(--color-gray-1);
+  --theme-text: var(--color-gray-3);
   --theme-text-light: var(--color-gray-600);
   --theme-text-lighter: var(--color-gray-2);
   --theme-bg: var(--color-white);
@@ -57,14 +76,7 @@
   --theme-code-bg: var(--color-gray-700);
 }
 
-@font-face {
-  font-family: 'Josefin Sans';
-  font-style: normal;
-  font-display: swap;
-  font-weight: 100 700;
-  src: url(./assets/fonts/josefin-sans-latin-variable-wghtOnly-normal.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}  
+
 
 
 
@@ -111,7 +123,7 @@ body {
   min-height: 100vh;
   max-width: 660px;
   margin: 3vw auto;
-  font-family: var(--font-mono);
+  font-family: var(--font-temp);
   font-size: 16px;
   /* font-size: clamp(0.875rem, 0.4626rem + 1.0309vw + var(--user-font-scale), 1.125rem); */
   line-height: 1.4;
@@ -153,7 +165,7 @@ p {margin-bottom: 1rem;}
 h1, h2, h3, h4, h5 {
   margin: 3rem 0 1.38rem;
   font-weight: 500;
-  line-height: 1.3;
+  /* line-height: 1.3; */
     margin-block-start: 1em;
     margin-block-end: 1em;
     margin-inline-start: 0px;
@@ -293,7 +305,7 @@ pre {
   width: calc(100vw + (var(--padding-inline) * 2));
   max-width: calc(100% + (var(--padding-inline) * 2));
   overflow-y: hidden;
-  overflow-x: auto;
+  /* overflow-x: auto; */
 }
 
 @media (min-width: 37.75em) {
